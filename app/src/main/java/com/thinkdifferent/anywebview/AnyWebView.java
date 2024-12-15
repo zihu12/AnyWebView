@@ -204,7 +204,9 @@ public class AnyWebView extends BaseXposedHookLoadPackage {
                     "[Landroid.webkit.WebViewProviderInfo;", lpparam.classLoader);
             classSystemImpl = findClass("com.android.server.webkit.SystemImpl", lpparam.classLoader);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+                classWebViewUpdater = findClass("com.android.server.webkit.WebViewUpdateServiceImpl2", lpparam.classLoader);
+            }else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 classWebViewUpdater = findClass("com.android.server.webkit.WebViewUpdateServiceImpl", lpparam.classLoader);
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 classWebViewUpdater = findClass("com.android.server.webkit.WebViewUpdater", lpparam.classLoader);
