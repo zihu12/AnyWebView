@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 35
     defaultConfig {
         applicationId "com.thinkdifferent.anywebview"
         minSdkVersion 24
-        targetSdkVersion 33
+        targetSdkVersion 35
         versionCode 3
         versionName '1.2'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,7 +25,8 @@ android {
 
 repositories {
     mavenCentral();
-    jcenter()
+    jcenter();
+    maven { url 'https://api.xposed.info/' }
 }
 
 dependencies {
